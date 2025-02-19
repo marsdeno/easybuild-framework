@@ -2766,8 +2766,6 @@ def get_source_tarball_from_git(filename, targetdir, git_config):
                 checkout_cmd.extend(["--recurse-submodules='%s'" % pat for pat in recurse_submodules])
         run.run_cmd(' '.join(checkout_cmd), log_all=True, simple=True, regexp=False, path=repo_name)
 
-
-
     elif not build_option('extended_dry_run'):
         # If we wanted to get a tag make sure we actually got a tag and not a branch with the same name
         # This doesn't make sense in dry-run mode as we don't have anything to check
