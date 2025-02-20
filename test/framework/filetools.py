@@ -3031,7 +3031,7 @@ class FileToolsTest(EnhancedTestCase):
         for key in ['repo_name', 'url', 'tag']:
             orig_value = git_config.pop(key)
             if key == 'tag':
-                error_pattern = "Neither tag nor commit found in git_config parameter"
+                error_pattern = "Neither tag nor commit nor branch found in git_config parameter"
             else:
                 error_pattern = "%s not specified in git_config parameter" % key
             self.assertErrorRegex(EasyBuildError, error_pattern, ft.get_source_tarball_from_git, *args)
